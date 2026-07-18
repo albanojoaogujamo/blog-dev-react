@@ -5,11 +5,24 @@
 }
 
 :root {
-    --bg: #c6ceda;
-    --texto:rgba(194, 31, 137, 0.76) ;
-    --borda:#4a4a4a;
-    --cards:rgb(38, 38, 103);
-    --btn: rgb(108, 5, 101);
+    --bg: #121113;
+    --texto: #e4e4e7;
+    --cards: #1a191b;
+    --borda: #2d2c2e;
+   --gradient-start: #6366f1;
+   --gradient-end: #d946ef;
+}
+
+body {
+    margin: 0 auto;
+    padding: 15px 20px;
+    font-family: 'Inter', 'Roboto', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--texto);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -23,6 +36,7 @@ body {
 
 header{
     display: flex;
+    color: var(--texto);
     justify-content: space-between;
     text-align: center;
     padding: 20px 32px;
@@ -33,7 +47,7 @@ header nav{
     gap: 24px;
 }
 nav a{
-    color: black;
+    color: var(--texto);
 }
 
 main {
@@ -45,8 +59,9 @@ main {
 }
 
 .Post-card {
+    color: var(--texto);
     border-radius: 15px;
-    box-shadow: 3px 3px 4px 3px;
+    box-shadow: 3px 3px 4px 3px #000000;
     display: grid;
     gap: 24px;
     margin: 10px;
@@ -55,14 +70,24 @@ main {
 }
 
 button {
-    background: var(--btn);
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    color: #ffffff;
+    border: none;
     height: 30px;
     cursor: pointer;
     transition: background 0.2s;
 }
 
-button :hover{
-    background: whitesmoke;
+button:hover{
+    opacity: 0.8;
+}
+
+header h1 {
+    color: var(--texto);
+}
+
+.Post-card h2 {
+    color: var(--texto);
 }
 
 @media (max-width:600px) {

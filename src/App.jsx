@@ -1,7 +1,7 @@
-import './App.css'
-import Header from "./Header";
-import Footer from "./Footer";
-import PostCard from "./PostCard";
+import './App.css';
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+import PostCard from "./Components/PostCard";
 import { Routes, Route } from 'react-router-dom';
 import Sobre from './Sobre';
 import { useState } from "react";
@@ -26,9 +26,13 @@ function App() {
     localStorage.setItem("posts", JSON.stringify(posts));
   }, [posts]);
 
+   useEffect(() => {
+            document.title = "Blog Dev - Inicio";
+          }, []);
+
   return (
    <>
-      <Header />
+   <Header />
       <input 
        type="text"
        value={titulo}
@@ -67,6 +71,8 @@ function App() {
           } /> 
           ++
           <Route path="/Sobre" element={<Sobre />} />
+
+         
       </Routes>
       
       <Footer />
